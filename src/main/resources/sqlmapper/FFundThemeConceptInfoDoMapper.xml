@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leadbank.mes.dal.dao.FFundThemeConceptInfoDoMapper">
+  <resultMap id="BaseResultMap" type="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    <id column="THEME_CONCEPT_INFO_ID" jdbcType="VARCHAR" property="themeConceptInfoId" />
+    <result column="THEME_ID" jdbcType="VARCHAR" property="themeId" />
+    <result column="FUND_CODE" jdbcType="VARCHAR" property="fundCode" />
+    <result column="STATUS" jdbcType="CHAR" property="status" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    THEME_CONCEPT_INFO_ID, THEME_ID, FUND_CODE, STATUS, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MFUND.F_FUND_THEME_CONCEPT_INFO
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MFUND.F_FUND_THEME_CONCEPT_INFO
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    insert into MFUND.F_FUND_THEME_CONCEPT_INFO (THEME_CONCEPT_INFO_ID, THEME_ID, FUND_CODE, 
+      STATUS, CREATE_TIME)
+    values (#{themeConceptInfoId,jdbcType=VARCHAR}, #{themeId,jdbcType=VARCHAR}, #{fundCode,jdbcType=VARCHAR}, 
+      #{status,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    insert into MFUND.F_FUND_THEME_CONCEPT_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="themeConceptInfoId != null">
+        THEME_CONCEPT_INFO_ID,
+      </if>
+      <if test="themeId != null">
+        THEME_ID,
+      </if>
+      <if test="fundCode != null">
+        FUND_CODE,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="themeConceptInfoId != null">
+        #{themeConceptInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="themeId != null">
+        #{themeId,jdbcType=VARCHAR},
+      </if>
+      <if test="fundCode != null">
+        #{fundCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    update MFUND.F_FUND_THEME_CONCEPT_INFO
+    <set>
+      <if test="themeId != null">
+        THEME_ID = #{themeId,jdbcType=VARCHAR},
+      </if>
+      <if test="fundCode != null">
+        FUND_CODE = #{fundCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    update MFUND.F_FUND_THEME_CONCEPT_INFO
+    set THEME_ID = #{themeId,jdbcType=VARCHAR},
+      FUND_CODE = #{fundCode,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=CHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    <id column="THEME_CONCEPT_INFO_ID" jdbcType="VARCHAR" property="themeConceptInfoId" />
+    <result column="THEME_ID" jdbcType="VARCHAR" property="themeId" />
+    <result column="FUND_CODE" jdbcType="VARCHAR" property="fundCode" />
+    <result column="STATUS" jdbcType="CHAR" property="status" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    THEME_CONCEPT_INFO_ID, THEME_ID, FUND_CODE, STATUS, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MFUND.F_FUND_THEME_CONCEPT_INFO
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MFUND.F_FUND_THEME_CONCEPT_INFO
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    insert into MFUND.F_FUND_THEME_CONCEPT_INFO (THEME_CONCEPT_INFO_ID, THEME_ID, FUND_CODE, 
+      STATUS, CREATE_TIME)
+    values (#{themeConceptInfoId,jdbcType=VARCHAR}, #{themeId,jdbcType=VARCHAR}, #{fundCode,jdbcType=VARCHAR}, 
+      #{status,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    insert into MFUND.F_FUND_THEME_CONCEPT_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="themeConceptInfoId != null">
+        THEME_CONCEPT_INFO_ID,
+      </if>
+      <if test="themeId != null">
+        THEME_ID,
+      </if>
+      <if test="fundCode != null">
+        FUND_CODE,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="themeConceptInfoId != null">
+        #{themeConceptInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="themeId != null">
+        #{themeId,jdbcType=VARCHAR},
+      </if>
+      <if test="fundCode != null">
+        #{fundCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    update MFUND.F_FUND_THEME_CONCEPT_INFO
+    <set>
+      <if test="themeId != null">
+        THEME_ID = #{themeId,jdbcType=VARCHAR},
+      </if>
+      <if test="fundCode != null">
+        FUND_CODE = #{fundCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    update MFUND.F_FUND_THEME_CONCEPT_INFO
+    set THEME_ID = #{themeId,jdbcType=VARCHAR},
+      FUND_CODE = #{fundCode,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=CHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    <id column="THEME_CONCEPT_INFO_ID" jdbcType="VARCHAR" property="themeConceptInfoId" />
+    <result column="THEME_ID" jdbcType="VARCHAR" property="themeId" />
+    <result column="FUND_CODE" jdbcType="VARCHAR" property="fundCode" />
+    <result column="STATUS" jdbcType="CHAR" property="status" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    THEME_CONCEPT_INFO_ID, THEME_ID, FUND_CODE, STATUS, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from MFUND.F_FUND_THEME_CONCEPT_INFO
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from MFUND.F_FUND_THEME_CONCEPT_INFO
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    insert into MFUND.F_FUND_THEME_CONCEPT_INFO (THEME_CONCEPT_INFO_ID, THEME_ID, FUND_CODE, 
+      STATUS, CREATE_TIME)
+    values (#{themeConceptInfoId,jdbcType=VARCHAR}, #{themeId,jdbcType=VARCHAR}, #{fundCode,jdbcType=VARCHAR}, 
+      #{status,jdbcType=CHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    insert into MFUND.F_FUND_THEME_CONCEPT_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="themeConceptInfoId != null">
+        THEME_CONCEPT_INFO_ID,
+      </if>
+      <if test="themeId != null">
+        THEME_ID,
+      </if>
+      <if test="fundCode != null">
+        FUND_CODE,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="themeConceptInfoId != null">
+        #{themeConceptInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="themeId != null">
+        #{themeId,jdbcType=VARCHAR},
+      </if>
+      <if test="fundCode != null">
+        #{fundCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    update MFUND.F_FUND_THEME_CONCEPT_INFO
+    <set>
+      <if test="themeId != null">
+        THEME_ID = #{themeId,jdbcType=VARCHAR},
+      </if>
+      <if test="fundCode != null">
+        FUND_CODE = #{fundCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=CHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.leadbank.mes.dal.model.FFundThemeConceptInfoDo">
+    update MFUND.F_FUND_THEME_CONCEPT_INFO
+    set THEME_ID = #{themeId,jdbcType=VARCHAR},
+      FUND_CODE = #{fundCode,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=CHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where THEME_CONCEPT_INFO_ID = #{themeConceptInfoId,jdbcType=VARCHAR}
+  </update>
+</mapper>
