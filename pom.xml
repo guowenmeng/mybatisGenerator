@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.gwm</groupId>
-	<artifactId>MybatisGenerator</artifactId>
+	<artifactId>mybatisgenerator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>MybatisGenerator</name>
+	<name>mybatisgenerator</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
