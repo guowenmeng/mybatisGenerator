@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.leadbank.pdccore.dal.mybatis.dao.NNavInfoDOMapper" >
+  <resultMap id="BaseResultMap" type="com.leadbank.pdccore.dal.mybatis.model.NNavInfoDO" >
+    <id column="NAV_ID" property="navId" jdbcType="VARCHAR" />
+    <result column="FUND_CODE" property="fundCode" jdbcType="VARCHAR" />
+    <result column="WORKDAY" property="workday" jdbcType="VARCHAR" />
+    <result column="NAV" property="nav" jdbcType="DECIMAL" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    NAV_ID, FUND_CODE, WORKDAY, NAV, CREATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from MFUND.N_NAV_WEEK
+    where NAV_ID = #{navId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from MFUND.N_NAV_WEEK
+    where NAV_ID = #{navId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.leadbank.pdccore.dal.mybatis.model.NNavInfoDO" >
+    insert into MFUND.N_NAV_WEEK (NAV_ID, FUND_CODE, WORKDAY, 
+      NAV, CREATE_TIME)
+    values (#{navId,jdbcType=VARCHAR}, #{fundCode,jdbcType=VARCHAR}, #{workday,jdbcType=VARCHAR}, 
+      #{nav,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.leadbank.pdccore.dal.mybatis.model.NNavInfoDO" >
+    insert into MFUND.N_NAV_WEEK
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="navId != null" >
+        NAV_ID,
+      </if>
+      <if test="fundCode != null" >
+        FUND_CODE,
+      </if>
+      <if test="workday != null" >
+        WORKDAY,
+      </if>
+      <if test="nav != null" >
+        NAV,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="navId != null" >
+        #{navId,jdbcType=VARCHAR},
+      </if>
+      <if test="fundCode != null" >
+        #{fundCode,jdbcType=VARCHAR},
+      </if>
+      <if test="workday != null" >
+        #{workday,jdbcType=VARCHAR},
+      </if>
+      <if test="nav != null" >
+        #{nav,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.leadbank.pdccore.dal.mybatis.model.NNavInfoDO" >
+    update MFUND.N_NAV_WEEK
+    <set >
+      <if test="fundCode != null" >
+        FUND_CODE = #{fundCode,jdbcType=VARCHAR},
+      </if>
+      <if test="workday != null" >
+        WORKDAY = #{workday,jdbcType=VARCHAR},
+      </if>
+      <if test="nav != null" >
+        NAV = #{nav,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where NAV_ID = #{navId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.leadbank.pdccore.dal.mybatis.model.NNavInfoDO" >
+    update MFUND.N_NAV_WEEK
+    set FUND_CODE = #{fundCode,jdbcType=VARCHAR},
+      WORKDAY = #{workday,jdbcType=VARCHAR},
+      NAV = #{nav,jdbcType=DECIMAL},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP}
+    where NAV_ID = #{navId,jdbcType=VARCHAR}
+  </update>
+</mapper>
